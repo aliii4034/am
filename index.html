@@ -4,88 +4,186 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>USA & UK Girls Dating - Private Chat & Meet Tonight</title>
-
-  <!-- Meta Tags for High CTR & SEO -->
-  <meta name="description" content="Meet Real USA & UK Dating Girls Online. Verified, Signup Required. Tap To Chat Now - 100% Real Profiles! Start private chat with beautiful women near you.">
-  <meta property="og:title" content="USA & UK Girls Looking For a Real Meet - Start Chatting Now!">
-  <meta property="og:description" content="Real Dating Girls Looking For Men Like You. Join Free - Signup Now, No Wait!">
-  <meta property="og:image" content="https://yourdomain.com/images/usa-uk-girls.jpg">
-  <meta property="og:url" content="https://yourdomain.com/landing-page">
-  <meta name="keywords" content="USA Girls Dating, UK Girls Online, Chat Girls Now, Meet Real Women, Adult Dating, Adsterra Offers, Africa Germany Girls, Private Hookups, Fast Chat, 18+ Chat Girls">
-
   <style>
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
       background: #fff4f8;
       text-align: center;
+      padding-bottom: 60px; /* Crucial - makes space for fixed popup */
+    }
+    .top-banner {
+      background-color: #28a745;
+      color: white;
+      padding: 12px 0;
+      font-size: clamp(18px, 4vw, 22px);
+      font-weight: bold;
+      width: 100%;
+      animation: pulse-banner 2s infinite;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+      position: relative;
+      z-index: 10;
+    }
+    @keyframes pulse-banner {
+      0% { background-color: #28a745; }
+      50% { background-color: #218838; }
+      100% { background-color: #28a745; }
     }
     .container {
-      padding: 25px;
-    }
-    h1 {
-      color: #c7006f;
-      font-size: 26px;
-      margin-bottom: 10px;
+      padding: 15px;
+      max-width: 600px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
     }
     .intro-text {
       color: #444;
-      font-size: 18px;
-      margin-bottom: 20px;
+      font-size: clamp(16px, 3vw, 18px);
+      margin: 0 0 15px 0;
+      line-height: 1.4;
     }
     .online-counter {
       background: #ffccd5;
       color: #b8003d;
-      padding: 10px 20px;
-      font-size: 18px;
+      padding: 10px 15px;
+      font-size: clamp(16px, 3vw, 18px);
       font-weight: bold;
       border-radius: 8px;
       display: inline-block;
-      margin-bottom: 20px;
+      margin-bottom: 15px;
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+      width: 90%;
+      max-width: 400px;
     }
     ul.dating-lines {
       list-style: none;
       padding: 0;
-      margin: 0 auto 25px auto;
+      margin: 0 auto 20px auto;
       max-width: 400px;
       text-align: left;
     }
     ul.dating-lines li {
       background: #ffe0eb;
-      margin: 4px 0;
-      padding: 8px;
+      margin: 6px 0;
+      padding: 8px 12px;
       border-radius: 6px;
-      font-size: 16px;
+      font-size: clamp(14px, 3vw, 16px);
+    }
+    .profile-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      max-width: 500px;
+      margin: 20px auto;
+    }
+    .profile-card {
+      background: white;
+      border-radius: 8px;
+      padding: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .profile-pic {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #ff6b9d;
+      margin-bottom: 6px;
+    }
+    .profile-name {
+      font-weight: bold;
+      color: #c7006f;
+      font-size: 14px;
+    }
+    .profile-location {
+      color: #666;
+      font-size: 12px;
+      margin: 2px 0;
+    }
+    .online-status {
+      color: #28a745;
+      font-weight: bold;
+      font-size: 12px;
+      animation: blink 1.5s infinite;
+    }
+    @keyframes blink {
+      0% { opacity: 1; }
+      50% { opacity: 0.7; }
+      100% { opacity: 1; }
     }
     .cta-btn {
       background-color: #28a745;
       color: white;
-      padding: 15px 30px;
-      font-size: 20px;
+      padding: 14px 25px;
+      font-size: clamp(16px, 4vw, 20px);
       font-weight: bold;
       border: none;
       border-radius: 8px;
       text-decoration: none;
       display: inline-block;
-      margin: 20px 0;
+      margin: 15px 0;
       cursor: pointer;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
       animation: pulse 1.5s infinite;
-    }
-    .cta-btn:hover {
-      background-color: #218838;
+      width: 80%;
+      max-width: 300px;
     }
     @keyframes pulse {
       0% { transform: scale(1); }
       50% { transform: scale(1.05); }
       100% { transform: scale(1); }
     }
+    .bottom-popup {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(90deg, #ff4081, #e91e63);
+      color: white;
+      padding: 10px 15px;
+      font-size: clamp(14px, 3.5vw, 16px);
+      font-weight: bold;
+      text-align: center;
+      box-shadow: 0 -2px 10px rgba(0,0,0,0.2);
+      animation: slideUp 0.5s ease-out, pulse-popup 2s infinite 0.5s;
+      z-index: 100;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+    }
+    .bottom-popup-text {
+      white-space: nowrap;
+    }
+    .bottom-popup-btn {
+      background: white;
+      color: #ff4081;
+      border: none;
+      border-radius: 20px;
+      padding: 6px 15px;
+      font-size: clamp(12px, 3vw, 14px);
+      font-weight: bold;
+      cursor: pointer;
+      animation: pulse 1s infinite;
+      white-space: nowrap;
+    }
+    @keyframes slideUp {
+      from { transform: translateY(100%); }
+      to { transform: translateY(0); }
+    }
+    @keyframes pulse-popup {
+      0% { background: linear-gradient(90deg, #ff4081, #e91e63); }
+      50% { background: linear-gradient(90deg, #e91e63, #c2185b); }
+      100% { background: linear-gradient(90deg, #ff4081, #e91e63); }
+    }
   </style>
 </head>
 <body>
+  <!-- Animated Green Top Banner -->
+  <div class="top-banner">💖 Meet Real USA & UK Girls Looking For Love Tonight!</div>
+  
   <div class="container">
-    <h1>💖 Meet Real USA & UK Girls Looking For Love Tonight!</h1>
     <p class="intro-text">Just Signup Required - Scroll Down & Signup Free 💌 — Meet USA 🇺🇸 & UK 🇬🇧 Girls Waiting For You ❤🔥! Then Start Private Chat with Girls Near You! 100% Verified Profiles.</p>
 
     <div class="online-counter">👩‍💻 50+ Girls Are Online Now<br>⬇ Scroll Down – Signup & Start Chat 💬🔥</div>
@@ -108,28 +206,84 @@
       <li>💌 Get Messages From Local Girls Instantly</li>
     </ul>
 
+    <!-- 8 USA Girls Profiles -->
+    <div class="profile-grid">
+      <div class="profile-card">
+        <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&h=200&q=80" alt="Emma" class="profile-pic">
+        <div class="profile-name">Emma, 25</div>
+        <div class="profile-location">Los Angeles</div>
+        <div class="online-status">Online Now</div>
+      </div>
+      <div class="profile-card">
+        <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&h=200&q=80" alt="Sophia" class="profile-pic">
+        <div class="profile-name">Sophia, 23</div>
+        <div class="profile-location">New York</div>
+        <div class="online-status">Online Now</div>
+      </div>
+      <div class="profile-card">
+        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&h=200&q=80" alt="Olivia" class="profile-pic">
+        <div class="profile-name">Olivia, 22</div>
+        <div class="profile-location">Chicago</div>
+        <div class="online-status">Online Now</div>
+      </div>
+      <div class="profile-card">
+        <img src="https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&h=200&q=80" alt="Jessica" class="profile-pic">
+        <div class="profile-name">Jessica, 24</div>
+        <div class="profile-location">Miami</div>
+        <div class="online-status">Online Now</div>
+      </div>
+      <div class="profile-card">
+        <img src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&h=200&q=80" alt="Ava" class="profile-pic">
+        <div class="profile-name">Ava, 21</div>
+        <div class="profile-location">Houston</div>
+        <div class="online-status">Online Now</div>
+      </div>
+      <div class="profile-card">
+        <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&h=200&q=80" alt="Isabella" class="profile-pic">
+        <div class="profile-name">Isabella, 26</div>
+        <div class="profile-location">Phoenix</div>
+        <div class="online-status">Online Now</div>
+      </div>
+      <div class="profile-card">
+        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&h=200&q=80" alt="Mia" class="profile-pic">
+        <div class="profile-name">Mia, 20</div>
+        <div class="profile-location">San Diego</div>
+        <div class="online-status">Online Now</div>
+      </div>
+      <div class="profile-card">
+        <img src="https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&h=200&q=80" alt="Charlotte" class="profile-pic">
+        <div class="profile-name">Charlotte, 27</div>
+        <div class="profile-location">Dallas</div>
+        <div class="online-status">Online Now</div>
+      </div>
+    </div>
+
     <a href="https://your-adsterra-direct-link.com" class="cta-btn">Signup Free</a>
   </div>
 
-  <!-- 🔁 BACK BUTTON + SIGNUP REDIRECT SCRIPT -->
+  <!-- Bottom Popup - Fixed Position -->
+  <div class="bottom-popup">
+    <span class="bottom-popup-text">🔥 Unlock All Dating Girls</span>
+    <button class="bottom-popup-btn">SIGN UP NOW</button>
+  </div>
+
   <script>
-    // ✅ Replace these with your actual URLs
     const adsterraLink = "https://your-adsterra-direct-link.com";
     const monitagLink1 = "https://your-monitag-smartlink-1.com";
     const monitagLink2 = "https://your-monitag-smartlink-2.com";
 
     let backCount = 0;
+    let autoRedirectTriggered = false;
 
-    // ✅ Handle signup button click
-    const signupButton = document.querySelector('a[href*="your-adsterra-direct-link.com"]');
-    if (signupButton) {
-      signupButton.addEventListener("click", function (e) {
+    // Make all Sign Up buttons work
+    document.querySelectorAll('.cta-btn, .bottom-popup-btn').forEach(button => {
+      button.addEventListener("click", function(e) {
         e.preventDefault();
+        autoRedirectTriggered = true;
         window.location.href = adsterraLink;
       });
-    }
+    });
 
-    // ✅ Back button redirection logic
     window.history.pushState({ page: 1 }, "", "");
     window.onpopstate = function () {
       backCount++;
@@ -139,6 +293,12 @@
         window.location.href = monitagLink2;
       }
     };
+
+    setTimeout(() => {
+      if (!autoRedirectTriggered) {
+        window.location.href = adsterraLink;
+      }
+    }, 60000);
   </script>
 </body>
 </html>
