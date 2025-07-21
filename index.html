@@ -1,326 +1,75 @@
-‎<!DOCTYPE html>
-‎<html lang="en">
-‎<head>
-‎  <meta charset="UTF-8">
-‎  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-‎  <title>Meet USA Hot Girls Tonight</title>
-‎  <style>
-‎    body {
-‎      margin: 0;
-‎      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-‎      background: white;
-‎      color: #333;
-‎      text-align: center;
-‎      padding: 15px;
-‎      overflow-x: hidden;
-‎    }
-‎
-‎    .main-container {
-‎      position: relative;
-‎      max-width: 500px;
-‎      margin: 0 auto;
-‎      padding: 3px;
-‎      border-radius: 20px;
-‎      background: transparent;
-‎    }
-‎
-‎    /* Laser Border Container */
-‎    .laser-container {
-‎      position: absolute;
-‎      top: 0;
-‎      left: 0;
-‎      right: 0;
-‎      bottom: 0;
-‎      border-radius: 20px;
-‎      overflow: hidden;
-‎      z-index: 0;
-‎      pointer-events: none;
-‎    }
-‎
-‎    /* Multi-Colored Laser Border Effect */
-‎    .laser-border {
-‎      position: absolute;
-‎      width: 100%;
-‎      height: 100%;
-‎      background: conic-gradient(
-‎        from 0deg,
-‎        transparent,
-‎        #ff0000 10%,
-‎        #00ff00 20%,
-‎        #0000ff 30%,
-‎        #ffff00 40%,
-‎        #ff00ff 50%,
-‎        transparent 60%
-‎      );
-‎      animation: laserRotate 16s linear infinite;
-‎      opacity: 0.7;
-‎    }
-‎
-‎    @keyframes laserRotate {
-‎      0% { transform: rotate(0deg); }
-‎      100% { transform: rotate(360deg); }
-‎    }
-‎
-‎    .container {
-‎      background: rgba(255, 255, 255, 0.9);
-‎      backdrop-filter: blur(10px);
-‎      border-radius: 15px;
-‎      padding: 20px;
-‎      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-‎      position: relative;
-‎      z-index: 1;
-‎    }
-‎
-‎    /* Rest of your existing CSS styles... */
-‎    h1 {
-‎      font-size: 24px;
-‎      margin: 0 0 15px;
-‎      color: #00c853;
-‎      text-shadow: 0 0 10px rgba(0, 200, 83, 0.3);
-‎    }
-‎
-‎    .profile-grid {
-‎      display: grid;
-‎      grid-template-columns: repeat(4, 1fr);
-‎      gap: 10px;
-‎      margin: 15px auto;
-‎      width: fit-content;
-‎    }
-‎
-‎    .profile {
-‎      position: relative;
-‎      width: 65px;
-‎      height: 65px;
-‎      margin: 0 auto;
-‎    }
-‎
-‎    .profile-img {
-‎      width: 100%;
-‎      height: 100%;
-‎      border-radius: 50%;
-‎      object-fit: cover;
-‎      border: 2px solid #00c853;
-‎      box-shadow: 0 0 0 3px rgba(0, 200, 83, 0.3);
-‎      transition: all 0.3s ease;
-‎      position: relative;
-‎      display: block;
-‎    }
-‎
-‎    .profile:hover .profile-img {
-‎      transform: scale(1.1);
-‎      box-shadow: 0 0 0 5px rgba(0, 200, 83, 0.5);
-‎      border: 2px solid #00ff7f;
-‎    }
-‎
-‎    @keyframes borderPulse {
-‎      0% { box-shadow: 0 0 0 3px rgba(0, 200, 83, 0.3); }
-‎      50% { box-shadow: 0 0 0 5px rgba(0, 200, 83, 0.5); }
-‎      100% { box-shadow: 0 0 0 3px rgba(0, 200, 83, 0.3); }
-‎    }
-‎
-‎    .profile-img {
-‎      animation: borderPulse 2s infinite;
-‎    }
-‎
-‎    .online-badge {
-‎      position: absolute;
-‎      bottom: -5px;
-‎      right: -5px;
-‎      width: 18px;
-‎      height: 18px;
-‎      background: #00ff7f;
-‎      border-radius: 50%;
-‎      border: 2px solid #fff;
-‎      animation: pulse 1.5s infinite;
-‎    }
-‎
-‎    @keyframes pulse {
-‎      0% { transform: scale(1); }
-‎      50% { transform: scale(1.2); }
-‎      100% { transform: scale(1); }
-‎    }
-‎
-‎    .highlight {
-‎      background: linear-gradient(90deg, #00c853, #00e676);
-‎      color: white;
-‎      padding: 10px;
-‎      border-radius: 8px;
-‎      margin: 15px 0;
-‎      font-size: 14px;
-‎      font-weight: bold;
-‎      box-shadow: 0 4px 15px rgba(0, 200, 83, 0.3);
-‎    }
-‎
-‎    .unlock-btn {
-‎      background: linear-gradient(90deg, #00c853, #00e676);
-‎      color: white;
-‎      border: none;
-‎      padding: 8px 12px;
-‎      border-radius: 25px;
-‎      font-weight: bold;
-‎      font-size: 12px;
-‎      cursor: pointer;
-‎      transition: all 0.3s;
-‎      box-shadow: 0 4px 10px rgba(0, 200, 83, 0.3);
-‎      margin: 5px 0 15px;
-‎      width: 100%;
-‎      max-width: 300px;
-‎      margin-left: auto;
-‎      margin-right: auto;
-‎      display: block;
-‎    }
-‎
-‎    .unlock-btn:hover {
-‎      transform: translateY(-2px);
-‎      box-shadow: 0 6px 15px rgba(0, 200, 83, 0.4);
-‎    }
-‎
-‎    .description-box {
-‎      background: rgba(0, 0, 0, 0.05);
-‎      border-radius: 10px;
-‎      padding: 15px;
-‎      margin: 15px 0;
-‎      text-align: left;
-‎      color: #333;
-‎    }
-‎
-‎    .description-line {
-‎      display: flex;
-‎      align-items: center;
-‎      margin-bottom: 10px;
-‎      font-size: 13px;
-‎      line-height: 1.4;
-‎    }
-‎
-‎    .description-line:before {
-‎      content: "•";
-‎      color: #00c853;
-‎      font-size: 20px;
-‎      margin-right: 8px;
-‎    }
-‎
-‎    .note-above-buttons {
-‎      font-size: 13px;
-‎      color: #ff4d6d;
-‎      font-weight: bold;
-‎      margin: 10px 0;
-‎      padding: 8px;
-‎      background: rgba(255, 77, 109, 0.1);
-‎      border-radius: 8px;
-‎    }
-‎
-‎    .btn-container {
-‎      display: flex;
-‎      flex-direction: column;
-‎      gap: 10px;
-‎      margin: 20px 0;
-‎    }
-‎
-‎    .signup-btn {
-‎      background: linear-gradient(90deg, #00c853, #00e676);
-‎      color: white;
-‎      border: none;
-‎      padding: 12px;
-‎      border-radius: 25px;
-‎      font-weight: bold;
-‎      font-size: 14px;
-‎      cursor: pointer;
-‎      transition: all 0.3s;
-‎      box-shadow: 0 4px 15px rgba(0, 200, 83, 0.3);
-‎      position: relative;
-‎      overflow: hidden;
-‎    }
-‎
-‎    .signup-btn:hover {
-‎      transform: translateY(-3px);
-‎      box-shadow: 0 7px 20px rgba(0, 200, 83, 0.4);
-‎    }
-‎
-‎    .signup-btn:after {
-‎      content: "";
-‎      position: absolute;
-‎      top: -50%;
-‎      left: -50%;
-‎      width: 200%;
-‎      height: 200%;
-‎      background: rgba(255, 255, 255, 0.1);
-‎      transform: rotate(45deg);
-‎      animation: shine 3s infinite;
-‎    }
-‎
-‎    @keyframes shine {
-‎      0% { left: -100%; }
-‎      20% { left: 100%; }
-‎      100% { left: 100%; }
-‎    }
-‎
-‎    footer {
-‎      font-size: 11px;
-‎      color: rgba(0, 0, 0, 0.5);
-‎      margin-top: 20px;
-‎    }
-‎  </style>
-‎</head>
-‎<body>
-‎  <div class="main-container">
-‎    <div class="laser-container">
-‎      <div class="laser-border"></div>
-‎    </div>
-‎    <div class="container">
-‎      <h1>Meet USA Hot Girls Tonight 🔥💋👙🍑</h1>
-‎      
-‎      <div class="profile-grid">
-‎        <div class="profile">
-‎          <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200&auto=format" class="profile-img" alt="Girl 1">
-‎          <div class="online-badge"></div>
-‎        </div>
-‎        <div class="profile">
-‎          <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=200&auto=format" class="profile-img" alt="Girl 2">
-‎          <div class="online-badge"></div>
-‎        </div>
-‎        <div class="profile">
-‎          <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&auto=format" class="profile-img" alt="Girl 3">
-‎          <div class="online-badge"></div>
-‎        </div>
-‎        <div class="profile">
-‎          <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&auto=format" class="profile-img" alt="Girl 4">
-‎          <div class="online-badge"></div>
-‎        </div>
-‎      </div>
-‎
-‎      <div class="highlight">
-‎        🔥 SCROLL DOWN - Sign up FREE for limited time offer! Meet young, thirsty hot girls in your area! 😍👇
-‎      </div>
-‎
-‎      <button class="unlock-btn">Signup free to unlock 🔓 all dating girls profile</button>
-‎
-‎      <div class="description-box">
-‎        <div class="description-line">❤ Meet Hot USA Girls Near You - Start Private Chat Now!</div>
-‎        <div class="description-line">🔥 Lonely Girls Are Online Right Now - Don't Keep Them Waiting!</div>
-‎        <div class="description-line">💋 She's Just 1 Click Away From Your Bed Tonight!</div>
-‎        <div class="description-line">👄 Real Girls, Real Profiles - Sign Up & Start Flirting Instantly!</div>
-‎        <div class="description-line">🌹 Looking for a Serious Partner? Girls in Your City Are Waiting!</div>
-‎        <div class="description-line">💑 Chat with Sexy Singles from USA, UK & Australia - Free Sign Up!</div>
-‎        <div class="description-line">😘 She Likes Older Men - Are You the One? Click to Meet!</div>
-‎        <div class="description-line">🔞 Adult Dating Zone: No Rules, Just Fun - Join Now!</div>
-‎        <div class="description-line">🍑 Thirsty Women Need You Tonight - Just Sign Up 👇😍😘</div>
-‎      </div>
-‎
-‎      <div class="note-above-buttons">
-‎        🚨 Note: Real meetups require FREE signup! Unlock access in 2 mins to meet REAL girls for sex, romance, and gifts! 🎁💑🔥
-‎      </div>
-‎
-‎      <div class="btn-container">
-‎        <button class="signup-btn">🔞 VIEW PROFILES (Signup Free)</button>
-‎        <button class="signup-btn">💌 SEND MESSAGE (Signup Free)</button>
-‎        <button class="signup-btn">🔥 INSTANT CHAT (Signup Free)</button>
-‎      </div>
-‎
-‎      <footer>
-‎        © 2025 Local Dating - Adults Only 🔞
-‎      </footer>
-‎    </div>
-‎  </div>
-‎</body>
-‎</html>
-‎
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>USA Girls Dating - Join Now ❤</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom, #fff0f5, #ffe4e1);
+      text-align: center;
+      padding: 20px;
+    }
+    h1 {
+      color: #e60073;
+      font-size: 28px;
+    }
+    .girl-pics {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin: 20px 0;
+    }
+    .girl-pics img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 4px solid #ff69b4;
+    }
+    .line {
+      font-size: 18px;
+      margin: 12px 0;
+      color: #cc0066;
+    }
+    .btn {
+      display: inline-block;
+      margin: 10px;
+      padding: 14px 30px;
+      font-size: 18px;
+      color: white;
+      background-color: #ff3385;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    .btn:hover {
+      background-color: #e60073;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>💘 Meet Real USA Girls Online 💘</h1>
+
+  <div class="girl-pics">
+    <img src="https://i.ibb.co/DGJP6n2/girl1.jpg" alt="Girl 1" />
+    <img src="https://i.ibb.co/6rzWtsf/girl2.jpg" alt="Girl 2" />
+  </div>
+
+  <div class="line">🔥 Hot girls near you are waiting!</div>
+  <div class="line">💌 Chat, flirt & find real dates now!</div>
+  <div class="line">🇺🇸 100% USA-based verified profiles!</div>
+  <div class="line">😈 Must be 18+ to join - Free entry!</div>
+
+  <!-- Replace these links with your real Adsterra / Monetag direct URLs -->
+  <a class="btn" href="https://your-direct-link-1.com" target="_blank">Sign Up - Jessica 💋</a>
+  <a class="btn" href="https://your-direct-link-2.com" target="_blank">Sign Up - Emma 🔥</a>
+  <a class="btn" href="https://your-direct-link-3.com" target="_blank">Sign Up - Olivia 😘</a>
+  <a class="btn" href="https://your-direct-link-4.com" target="_blank">Sign Up - Sophia 💖</a>
+
+</body>
+</html>
